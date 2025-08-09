@@ -1,6 +1,6 @@
 #  Cyber Lab
 
-This repository documents hands-on cybersecurity labs and protocol analyses using virtualized environments. It includes protocol dissections (DNS, ICMP), VM installations, IP subneting, OS configurations, and packet inspections—all conducted within a local VirtualBox setup.
+This repository documents hands-on cybersecurity labs and protocol analyses using virtualized environments. It includes protocol dissections (DNS, ICMP), VM installations, IP subnetting, OS configurations, packet inspections, Active Directory, SIEM, Patch Management, and Cryptography — all conducted within a local VirtualBox setup.
 
 ---
 
