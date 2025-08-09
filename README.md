@@ -29,12 +29,7 @@ This repository documents hands-on cybersecurity labs and protocol analyses usin
 | Ubuntu     | GUI      | ✅     | For desktop testing            |
 | CentOS     | Server   | ✅     | Used for service configuration |
 
- **Screenshots**:  
-![Windows 11 VM](<img width="3024" height="1964" alt="image" src="https://github.com/user-attachments/assets/d86ff313-9eb2-46ff-b4da-a6ef2828e3fd" />)  
-![Ubuntu CLI](<img width="3024" height="1964" alt="image" src="https://github.com/user-attachments/assets/7e79e14d-d9f1-4eac-b9a9-828053aa0254" />)  
-![Ubuntu GUI](images/ubuntu-gui.png)  
-![CentOS Install](images/centos-install.png)
-
+ 
 ---
 
 ## 🧪 Protocol Labs
@@ -52,7 +47,7 @@ This repository documents hands-on cybersecurity labs and protocol analyses usin
 - Identified recursive and iterative queries.
 - Tracked full domain resolution path.
 
-📸 ![DNS Capture](images/dns-protocol.png)
+
 
 ---
 
@@ -65,7 +60,7 @@ This repository documents hands-on cybersecurity labs and protocol analyses usin
 - Analyzed live ICMP packets in Wireshark.
 - Measured latency, packet size, TTL values.
 
-📸 ![ICMP Traffic](images/icmp-protocol.png)
+
 
 ---
 
@@ -78,7 +73,7 @@ Detailed specs of host machine and VM settings.
 - VirtualBox: [Insert Version]
 - Disk Images: Dynamically allocated VDI
 
-📸 ![System Config](images/system-config.png)
+
 
 ---
 
@@ -100,6 +95,55 @@ Detailed specs of host machine and VM settings.
 - Simulate MITM attacks in isolated network  
 - Document and compare ICMP behavior under blocked ports/firewalls  
 - Automate VM creation via Vagrant or Ansible
+
+---
+
+# Active Directory Homelab
+
+End-to-end Windows AD lab: two domain controllers, DNS, domain joins, OU/GPO management, replication health, Windows Admin Center, and basic network validation (ICMP, port checks). All steps are reproducible and evidenced with screenshots and command outputs.
+
+---
+
+## Lab Snapshot
+
+- **Forest/domain:** `cyberlearnssh.local`
+- **Functional level:** 2016
+- **Controllers:** `FRA02-WS-DC01` (Primary), `LAG02-WS-DC02` (Secondary)
+- **Services:** AD DS, DNS, DFSR (SYSVOL), GPMC
+- **Mgmt:** Windows Admin Center for servers and workstations
+
+---
+## What’s in this repo
+
+- **Connectivity checks**
+  - Continuous ping by IP (batch)
+  - Quick PowerShell port tests (RDP 3389, DNS 53)
+- **Active Directory**
+  - Promote DC01, set functional level 2016
+  - Add DC02 and verify replication
+  - Create users, join servers/workstations
+  - Organize OUs and link GPOs
+- **DNS**
+  - Fix gateway, validate forward and reverse lookups
+  - `nslookup` sanity checks
+- **Health**
+  - `repadmin /replsummary`
+  - `dcdiag` on both DCs
+- **Management**
+  - Windows Admin Center views
+  - Shared folder permissions evidence
+
+---
+
+## Environment & prerequisites
+
+- Hypervisor or lab network (VirtualBox/VMware/Hyper-V)
+- Windows Server for DCs (2016+ recommended)
+- At least one Windows client, one server member
+- Local admin on all VMs
+- Internet optional (used for updates/WAC access)
+
+---
 
 ---
 
