@@ -31,6 +31,78 @@ This repository documents hands-on cybersecurity labs and protocol analyses usin
 
  
 ---
+# Cybersecurity Network Analysis Task: IP Addressing & Subnetting
+
+This repository documents my lab work on analyzing network addressing schemes, creating subnet plans, and validating host configurations for secure and efficient network communication.
+
+---
+
+##  Objective
+
+- Understand and apply IP addressing concepts (IPv4 & IPv6).
+- Perform subnetting to segment networks according to design requirements.
+- Verify network configurations through analysis and testing.
+- Demonstrate calculations for usable hosts, network addresses, and broadcast addresses.
+- Apply addressing strategies for cybersecurity lab environments.
+
+---
+
+##  Tools & Environment
+
+- **Operating Systems:** Windows 11, Ubuntu (CLI & GUI)
+- **Networking Tools:** `ipconfig`, `ifconfig`, `ping`, `traceroute`, `netstat`
+- **Diagramming:** draw.io / Lucidchart for network topology
+- **Packet Analysis:** Wireshark
+- **Virtualization:** VirtualBox (for isolated lab networks)
+
+---
+
+##  Task Steps
+
+### 1. IP Addressing Analysis
+- Identified current IP configuration using:
+  ```powershell
+  ipconfig /all     # Windows
+  ifconfig          # Linux
+
+### 2. Subnetting Plan
+Given a base network: 192.168.10.0/24
+
+Required: 5 subnets with at least 30 hosts each.
+
+Calculation:
+
+Host requirement: 30 → Need 5 bits for hosts (2^5 - 2 = 30 usable)
+
+New mask: /27 (255.255.255.224)
+
+Number of subnets: 2^(borrowed bits) = 8
+
+Resulting subnets:
+
+Subnet #	Network Address	Usable Range	Broadcast Address
+1	192.168.10.0	192.168.10.1–192.168.10.30	192.168.10.31
+2	192.168.10.32	192.168.10.33–192.168.10.62	192.168.10.63
+3	192.168.10.64	192.168.10.65–192.168.10.94	192.168.10.95
+4	192.168.10.96	192.168.10.97–192.168.10.126	192.168.10.127
+5	192.168.10.128	192.168.10.129–192.168.10.158	192.168.10.159
+
+3. Address Assignment
+Assigned first usable IP in each subnet to gateway/router.
+
+Allocated static IPs for servers, dynamic range for clients.
+
+Ensured no overlap and documented assignments in an IP Address Table.
+
+4. Verification & Testing
+Used ping and traceroute to confirm connectivity.
+
+Captured ARP and ICMP traffic in Wireshark to observe network behavior.
+
+Verified subnet isolation by attempting cross-subnet communication.
+
+
+---
 
 ## 🧪 Protocol Labs
 
