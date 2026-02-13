@@ -25,9 +25,10 @@ This repository documents hands-on cybersecurity labs and protocol analyses usin
 | OS         | Type     | Status | Notes                          |
 |------------|----------|--------|---------------------------------|
 | Windows 11 | Desktop  | ✅     | Fully updated, Virtualized     |
-| Ubuntu     | CLI      | ✅     | Used for protocol simulations  |
+| Ubuntu     | CLI      | ✅     | Used for protocol simulations/victim  |
 | Ubuntu     | GUI      | ✅     | For desktop testing            |
 | CentOS     | Server   | ✅     | Used for service configuration |
+| Kali       | Server   | ✅     | Attacker Machine           |
 
  
 ---
